@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "target": "ES2015",          // Update to ES2015 or higher
+    "lib": ["dom", "dom.iterable", "ESNext"],  // Include ESNext or ES2015
     "allowJs": true,
-    "skipLibCheck": true,
+    "skipLibCheck": true,        // Consider setting this to false if you need to check lib types
     "strict": true,
     "noEmit": true,
     "esModuleInterop": true,

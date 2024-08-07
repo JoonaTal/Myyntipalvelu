@@ -3,17 +3,17 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var config_1 = require("payload/config");
-var bundler_webpack_1 = require("@payloadcms/bundler-webpack");
-var db_mongodb_1 = require("@payloadcms/db-mongodb");
-var richtext_slate_1 = require("@payloadcms/richtext-slate");
-var path_1 = __importDefault(require("path"));
-var Users_1 = require("./collections/Users");
-var dotenv_1 = __importDefault(require("dotenv"));
-var Products_1 = require("./collections/Products/Products");
-var Media_1 = require("./collections/Media");
-var ProductFile_1 = require("./collections/ProductFile");
-var Orders_1 = require("./collections/Orders");
+const config_1 = require("payload/config");
+const bundler_webpack_1 = require("@payloadcms/bundler-webpack");
+const db_mongodb_1 = require("@payloadcms/db-mongodb");
+const richtext_slate_1 = require("@payloadcms/richtext-slate");
+const path_1 = __importDefault(require("path"));
+const Users_1 = require("./collections/Users");
+const dotenv_1 = __importDefault(require("dotenv"));
+const Products_1 = require("./collections/Products/Products");
+const Media_1 = require("./collections/Media");
+const ProductFile_1 = require("./collections/ProductFile");
+const Orders_1 = require("./collections/Orders");
 dotenv_1.default.config({
     path: path_1.default.resolve(__dirname, '../.env'),
 });
@@ -28,7 +28,7 @@ exports.default = (0, config_1.buildConfig)({
         bundler: (0, bundler_webpack_1.webpackBundler)(),
         meta: {
             titleSuffix: '- DigitalHippo',
-            favicon: '/favicon.ico',
+            favicon: '/favicon.icon',
             ogImage: '/thumbnail.jpg',
         },
     },

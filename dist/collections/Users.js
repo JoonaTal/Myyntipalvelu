@@ -1,9 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Users = void 0;
-var PrimaryActionEmail_1 = require("../components/emails/PrimaryActionEmail");
-var adminsAndUser = function (_a) {
-    var user = _a.req.user;
+const PrimaryActionEmail_1 = require("../components/emails/PrimaryActionEmail");
+const adminsAndUser = ({ req: { user } }) => {
     if (user.role === "admin")
         return true;
     return {
@@ -16,33 +15,23 @@ exports.Users = {
     slug: "users",
     auth: {
         verify: {
-            generateEmailHTML: function (_a) {
-                var token = _a.token;
+            generateEmailHTML: ({ token }) => {
                 return (0, PrimaryActionEmail_1.PrimaryActionEmailHtml)({
                     actionLabel: "Vahvista Käyttäjäsi",
                     buttonText: "Vahvista Käyttäjäsi",
-                    href: "".concat(process.env.NEXT_PUBLIC_SERVER_URL, "/verify-email?token=").concat(token)
+                    href: `${process.env.NEXT_PUBLIC_SERVER_URL}/verify-email?token=${token}`
                 });
             },
         },
     },
     access: {
         read: adminsAndUser,
-        create: function () { return true; },
-        update: function (_a) {
-            var req = _a.req;
-            return req.user.role === "admin";
-        },
-        delete: function (_a) {
-            var req = _a.req;
-            return req.user.role === "admin";
-        }
+        create: () => true,
+        update: ({ req }) => req.user.role === "admin",
+        delete: ({ req }) => req.user.role === "admin"
     },
     admin: {
-        hidden: function (_a) {
-            var user = _a.user;
-            return user.role !== "admin";
-        },
+        hidden: ({ user }) => user.role !== "admin",
         defaultColumns: ["id"],
     },
     fields: [
@@ -50,7 +39,7 @@ exports.Users = {
             name: "products",
             label: "Products",
             admin: {
-                condition: function () { return false; }
+                condition: () => false
             },
             type: "relationship",
             relationTo: "products",
@@ -60,7 +49,7 @@ exports.Users = {
             name: "product_files",
             label: "Product files",
             admin: {
-                condition: function () { return false; }
+                condition: () => false
             },
             type: "relationship",
             relationTo: "product_files",

@@ -1,8 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Orders = void 0;
-var yourOwn = function (_a) {
-    var user = _a.req.user;
+const yourOwn = ({ req: { user } }) => {
     if (user.role === "admin")
         return true;
     return {
@@ -19,30 +18,18 @@ exports.Orders = {
     },
     access: {
         read: yourOwn,
-        update: function (_a) {
-            var req = _a.req;
-            return req.user.role === "admin";
-        },
-        delete: function (_a) {
-            var req = _a.req;
-            return req.user.role === "admin";
-        },
-        create: function (_a) {
-            var req = _a.req;
-            return req.user.role === "admin";
-        },
+        update: ({ req }) => req.user.role === "admin",
+        delete: ({ req }) => req.user.role === "admin",
+        create: ({ req }) => req.user.role === "admin",
     },
     fields: [
         {
             name: "_isPaid",
             type: "checkbox",
             access: {
-                read: function (_a) {
-                    var req = _a.req;
-                    return req.user.role === "admin";
-                },
-                create: function () { return false; },
-                update: function () { return false; },
+                read: ({ req }) => req.user.role === "admin",
+                create: () => false,
+                update: () => false,
             },
             admin: {
                 hidden: true,
