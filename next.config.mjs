@@ -1,11 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-        domains: [
-            'localhost',
-            'http://myyntipalvelu-production.up.railway.app'
+        remotePatterns: [
+            {
+                hostname: "http://myyntipalvelu-production.up.railway.app",                
+                protocol: "http",
+                pathname: "**",
+            }
         ]
     }
 };
 
-module.exports = nextConfig
+export default nextConfig;
