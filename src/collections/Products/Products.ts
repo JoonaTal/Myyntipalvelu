@@ -58,18 +58,19 @@ const isAdminOrHasAccess =
     if (!user) return false
     if (user.role === 'admin') return true
 
-    const userProductIDs = (user.products || []).reduce<
-      Array<string>
-    >((acc, product) => {
-      if (!product) return acc
-      if (typeof product === 'string') {
-        acc.push(product)
-      } else {
-        acc.push(product.id)
-      }
+    const userProductIDs = (user.products || []).reduce<Array<string>>(
+      (acc, product) => {
+        if (!product) return acc
+        if (typeof product === 'string') {
+          acc.push(product)
+        } else {
+          acc.push(product.id)
+        }
 
-      return acc
-    }, [])
+        return acc
+      },
+      []
+    )
 
     return {
       id: {
