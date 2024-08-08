@@ -41,7 +41,7 @@ const Page = () => {
     <div className='bg-white'>
       <div className='mx-auto max-w-2xl px-4 pb-24 pt-16 sm:px-6 lg:max-w-7xl lg:px-8'>
         <h1 className='text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl'>
-          Shopping Cart
+          Ostoskärry
         </h1>
 
         <div className='mt-12 lg:grid lg:grid-cols-12 lg:items-start lg:gap-x-12 xl:gap-x-16'>
@@ -51,7 +51,7 @@ const Page = () => {
                 isMounted && items.length === 0,
             })}>
             <h2 className='sr-only'>
-              Items in your shopping cart
+              Tuotteet ostoskorissasi
             </h2>
 
             {isMounted && items.length === 0 ? (
@@ -60,17 +60,17 @@ const Page = () => {
                   aria-hidden='true'
                   className='relative mb-4 h-40 w-40 text-muted-foreground'>
                   <Image
-                    src='/hippo-empty-cart.png'
+                    src=''
                     fill
                     loading='eager'
-                    alt='empty shopping cart hippo'
+                    alt='Empty shopping cart icon'
                   />
                 </div>
                 <h3 className='font-semibold text-2xl'>
-                  Your cart is empty
+                  Ostoskorisi on tyhä
                 </h3>
                 <p className='text-muted-foreground text-center'>
-                  Whoops! Nothing to show here yet.
+                  Ei mitään vielä!
                 </p>
               </div>
             ) : null}
@@ -150,9 +150,7 @@ const Page = () => {
                         <p className='mt-4 flex space-x-2 text-sm text-gray-700'>
                           <Check className='h-5 w-5 flex-shrink-0 text-green-500' />
 
-                          <span>
-                            Eligible for instant delivery
-                          </span>
+                          
                         </p>
                       </div>
                     </li>
@@ -163,13 +161,13 @@ const Page = () => {
 
           <section className='mt-16 rounded-lg bg-gray-50 px-4 py-6 sm:p-6 lg:col-span-5 lg:mt-0 lg:p-8'>
             <h2 className='text-lg font-medium text-gray-900'>
-              Order summary
+              Yhteenvetä
             </h2>
 
             <div className='mt-6 space-y-4'>
               <div className='flex items-center justify-between'>
                 <p className='text-sm text-gray-600'>
-                  Subtotal
+                  Välisumma
                 </p>
                 <p className='text-sm font-medium text-gray-900'>
                   {isMounted ? (
@@ -182,7 +180,7 @@ const Page = () => {
 
               <div className='flex items-center justify-between border-t border-gray-200 pt-4'>
                 <div className='flex items-center text-sm text-muted-foreground'>
-                  <span>Flat Transaction Fee</span>
+                  <span>Transaktiomaksu</span>
                 </div>
                 <div className='text-sm font-medium text-gray-900'>
                   {isMounted ? (
@@ -195,7 +193,7 @@ const Page = () => {
 
               <div className='flex items-center justify-between border-t border-gray-200 pt-4'>
                 <div className='text-base font-medium text-gray-900'>
-                  Order Total
+                  Tilaus yhteensä
                 </div>
                 <div className='text-base font-medium text-gray-900'>
                   {isMounted ? (

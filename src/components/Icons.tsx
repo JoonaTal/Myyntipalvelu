@@ -1,4 +1,23 @@
-import { LucideProps } from "lucide-react";
+// No need to import LucideProps anymore
+import React from 'react';
+
+export const Icons = {
+  logo: (props: React.ImgHTMLAttributes<HTMLImageElement>) => (
+    <img 
+      src="/favicon.ico" 
+      alt="Logo" 
+      {...props} 
+      style={{...props.style }} 
+    />
+  ),
+};
+
+
+
+//vanha logo
+
+
+/*import { LucideProps } from "lucide-react";
 
 export const Icons = {
   logo: (props: LucideProps) => (
@@ -87,3 +106,4 @@ export const Icons = {
     </svg>
   ),
 };
+*/

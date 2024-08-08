@@ -12,7 +12,7 @@ const UserAccountNav = ({user}: {user: User}) => {
     <DropdownMenu>
       <DropdownMenuTrigger asChild className="overflow-visible">
         <Button variant="ghost" size="sm" className="relative">
-          My account
+          Tili
         </Button>
       </DropdownMenuTrigger>
     
@@ -27,11 +27,11 @@ const UserAccountNav = ({user}: {user: User}) => {
         <DropdownMenuSeparator />
 
         <DropdownMenuItem asChild>
-            <Link href="/sell">Seller Dashboard</Link>
+            <Link href="/sell">Myyjän kojelauta</Link>
         </DropdownMenuItem>
 
         <DropdownMenuItem onClick={signOut} className="cursor-pointer">
-            Log out
+            Kirjaudu ulos
         </DropdownMenuItem>
     </DropdownMenuContent>
     </DropdownMenu>

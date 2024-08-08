@@ -49,7 +49,7 @@ const Cart = () => {
       </SheetTrigger>
       <SheetContent className="flex w-full flex-col pr-0 sm:max-w-1g">
         <SheetHeader className="space-y-2.5 pr-6">
-          <SheetTitle>Cart ({itemCount})</SheetTitle>
+          <SheetTitle>Ostoskori ({itemCount})</SheetTitle>
         </SheetHeader>
         {itemCount > 0 ? (
           <>
@@ -63,10 +63,7 @@ const Cart = () => {
             <div className="space-y-4 pr-6">
               <Separator />
               <div className="space-y-1.6 pr-6">
-                <div className="flex">
-                  <span className="flex-1">Shipping</span>
-                  <span>Free</span>
-                </div>
+                
                 <div className="flex">
                   <span className="flex-1">Transaction Fee</span>
                   <span>{formatPrice(fee)}</span>
@@ -85,7 +82,7 @@ const Cart = () => {
                       className: "w-full",
                     })}
                   >
-                    Continue to checkout
+                    Jatka kassalle
                   </Link>
                 </SheetTrigger>
               </SheetFooter>
@@ -98,12 +95,12 @@ const Cart = () => {
               className="relative mb-4- h-60 w-60 text-muted-foreground"
             >
               <Image
-                src="/public/hippo-empty-cart.png"
+                src=""
                 fill
                 alt="empty shopping cart"
               />
             </div>
-            <div className="text-xl font-semibold">Your cart is empty</div>
+            <div className="text-xl font-semibold">Ostoskorisi on tyhjä</div>
             <SheetTrigger asChild>
               <Link
                 href="/products"
@@ -113,7 +110,7 @@ const Cart = () => {
                   className: "text-sm text-muted-foreground",
                 })}
               >
-                Add items to your cart to checkout
+                Lisää tuotteita ostoskoriisi jatkaaksesi kassalle
               </Link>
             </SheetTrigger>
           </div>

@@ -37,7 +37,7 @@ const Navbar = async () => {
                         variant: "ghost",
                       })}
                     >
-                      Sign in
+                      Kirjaudu sisään
                     </Link>
                   )}
 
@@ -54,7 +54,7 @@ const Navbar = async () => {
                         variant: "ghost",
                       })}
                     >
-                      Create Account
+                      Luo käyttäjä
                     </Link>
                   )}
 

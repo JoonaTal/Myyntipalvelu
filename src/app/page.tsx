@@ -1,24 +1,24 @@
 import MaxWidtWrapper from "@/components/MaxWidthWrapper";
 import ProductReel from "@/components/ProductReel";
-import { buttonVariants, Button } from "@/components/ui/button";
-import { ArrowDownToLine, CheckCircle, Leaf } from "lucide-react";
-import Link from 'next/link'
+import { Button, buttonVariants } from "@/components/ui/button";
+import { CalendarFold, CheckCircle, Leaf } from "lucide-react";
+import Link from 'next/link';
 
 const perks = [
     {
-        name: 'Instant Devilery',
-        Icon: ArrowDownToLine,
-        description: "Testi liirum laaruum"
+        name: 'Hieno logo1',
+        Icon: CalendarFold,
+        description: "teksti"
     },
     {
-        name: 'Laarun liirum',
+        name: 'Hieno logo2',
         Icon: CheckCircle,
-        description: "Testi asdasdasd laaruum"
+        description: "teksti"
     },
     {
-        name: 'qweqweqwe',
+        name: 'Hieno logo3',
         Icon: Leaf,
-        description: "iiirum testi laarum"
+        description: "teksti"
     },
     
 ]
@@ -29,18 +29,17 @@ export default function Home() {
      <MaxWidtWrapper>
         <div className="py-20 mx-auto text-center flex flex-col items-center max-w-3x1">
             <h1 className="text-4x1 font-bold tracking-tight text-gray-900 sm:text-6x1">
-                Salon <span className='text-blue-600'>kauppatori</span>
+                SSKKY <span className='text-blue-600'>Kauppa</span>
             </h1>
             <p className="mt-6 text-lg max-w-prose">
                 Tervetuloa Salon kauppatoriin.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mt-6">
-                <Link href='/products' className={buttonVariants()}>TESTI</Link>
-                <Button variant='ghost'>Testi testi &rarr;</Button>
+                <Link href='/products' className={buttonVariants()}>Selaa Tuotteita</Link>
             </div>
         </div>
 
-        <ProductReel query={{sort: "desc", limit: 4}} href="/products" title="brand new"/>
+        <ProductReel query={{sort: "desc", limit: 4}} href="/products" title="Uusia-tuotteita"/>
     </MaxWidtWrapper>
 
     <section className="border-t border-gray-200 bg-gray-50">

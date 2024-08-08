@@ -79,7 +79,7 @@ const Page = () => {
         <div className="flex flex-col items-center space-y-2 text-center">
           <Icons.logo className="h-20 w-20" />
           <h1 className="text-2xl font-bold">
-            Sign in to your {isSeller ? "seller" : ""} account </h1>
+            Kirjaudu sisään {isSeller ? "myyjä" : ""} tilillesi </h1>
 
           <Link
             className={buttonVariants({
@@ -88,7 +88,7 @@ const Page = () => {
             })}
             href="/sign-up"
           >
-            dont have an account?
+            Eikö sinulla ole tiliä?
             <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
@@ -103,7 +103,7 @@ const Page = () => {
                   className={cn({
                     "focus-visible:ring-red-500": errors.email,
                   })}
-                  placeholder="you@example.com"
+                  placeholder="esimerkki@gmail.com"
                 />
                 {errors?.email && (
                   <p className="text-red-500 text-sm">{errors.email.message}</p>
@@ -111,14 +111,14 @@ const Page = () => {
               </div>
 
               <div className="grid gap-1 py-2">
-                <Label htmlFor="password">Password</Label>
+                <Label htmlFor="password">Salasana</Label>
                 <Input
                   {...register("password")}
                   type="password"
                   className={cn({
                     "focus-visible:ring-red-500": errors.password,
                   })}
-                  placeholder="Password"
+                  placeholder="Salasana"
                 />
                 {errors?.password && (
                   <p className="text-red-500 text-sm">
@@ -151,15 +151,15 @@ const Page = () => {
             </div>
             <div className="relative flex justify-center text-xc uppercase">
                 <span className="bg-background px-2 text-muted-foreground">
-                    or
+                    Tai
                 </span>
             </div>
           </div>
 
           {isSeller ? (
-            <Button onClick={continueAsBuyer} variant="secondary" disabled={isLoading}>Continue as buyer</Button>
+            <Button onClick={continueAsBuyer} variant="secondary" disabled={isLoading}>Jatka ostajana</Button>
           ) : (
-            <Button onClick={continueAsSeller} variant="secondary" disabled={isLoading}>Continue as customer</Button>
+            <Button onClick={continueAsSeller} variant="secondary" disabled={isLoading}>Jatka myyjänä</Button>
           
           )}
         </div>

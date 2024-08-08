@@ -3,44 +3,34 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.PRODUCT_CATEGORIES = void 0;
 exports.PRODUCT_CATEGORIES = [
     {
-        label: "UI Kits",
+        label: "Tuotteita",
         value: "ui_kits",
         featured: [
             {
-                name: "Editor picks",
+                name: "Suosikit",
                 href: "#",
                 imageSrc: "/nav/ui-kits/mixed.jpg",
             },
             {
-                name: "New Arrivals",
+                name: "Uutuudet",
                 href: "#",
                 imageSrc: "/nav/ui-kits/blue.jpg",
-            },
-            {
-                name: "Best Sellers",
-                href: "#",
-                imageSrc: "/nav/ui-kits/purple.jpg",
             },
         ],
     },
     {
-        label: "Icons",
+        label: "Lisää tuotteita",
         value: "icons",
         featured: [
             {
-                name: "Favourite Icon Picks",
+                name: "Suosikit",
                 href: "#",
                 imageSrc: "/nav/icons/picks.jpg",
             },
             {
-                name: "New Arrivals",
+                name: "Uutuudet",
                 href: "#",
                 imageSrc: "/nav/icons/new.jpg",
-            },
-            {
-                name: "Bestselling Icons",
-                href: "#",
-                imageSrc: "/nav/icons/bestsellers.jpg",
             },
         ],
     },

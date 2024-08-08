@@ -24,7 +24,7 @@ export default buildConfig({
     user: 'users',
     bundler: webpackBundler(),
     meta: {
-      titleSuffix: '- DigitalHippo',
+      titleSuffix: 'JT',
       favicon: '/favicon.ico',
       ogImage: '/thumbnail.jpg',
     },

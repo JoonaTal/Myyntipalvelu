@@ -72,9 +72,7 @@ const NavItem = ({ isAnyOpen, category, handleOpen, isOpen }: NavItemProps) => {
                       >
                         {item.name}
                       </Link>
-                      <p className="mt-1" aria-hidden="true">
-                        Shop now
-                      </p>
+                      
                     </div>
                   ))}
                 </div>

@@ -58,7 +58,7 @@ const Page = () => {
       <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]">
         <div className="flex flex-col items-center space-y-2 text-center">
           <Icons.logo className="h-20 w-20" />
-          <h1 className="text-2xl font-bold">Create an account</h1>
+          <h1 className="text-2xl font-bold">Luo tili</h1>
 
           <Link
             className={buttonVariants({
@@ -67,7 +67,7 @@ const Page = () => {
             })}
             href="/sign-in"
           >
-            Already have an account? Sign-in
+            Onko sinulla jo tili? Kirjaudu sisään
             <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
@@ -92,7 +92,7 @@ const Page = () => {
               </div>
 
               <div className="grid gap-1 py-2">
-                <Label htmlFor="password">Password</Label>
+                <Label htmlFor="password">Salasana</Label>
                 <Input
                   {...register("password")}
                   type="password"

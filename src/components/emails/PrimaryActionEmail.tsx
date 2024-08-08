@@ -29,22 +29,20 @@ export const EmailTemplate = ({
     <Html>
       <Head />
       <Preview>
-        The marketplace for high-quality digital goods.
+        Poistettavien tavaroiden myyntipalvelu
       </Preview>
       <Body style={main}>
         <Container style={container}>
           <Img
-            src={`${process.env.NEXT_PUBLIC_SERVER_URL}/hippo-newsletter-sign-up.png`}
+            src={`${process.env.NEXT_PUBLIC_SERVER_URL}`}
             width='150'
             height='150'
-            alt='DigitalHippo'
+            alt='JT'
             style={logo}
           />
           <Text style={paragraph}>Hi there,</Text>
           <Text style={paragraph}>
-            Welcome to DigitalHippo, the marketplace for
-            high quality digital goods. Use the button below
-            to {actionLabel}.
+            Tervetuloa, jokunimi {actionLabel}.
           </Text>
           <Section style={btnContainer}>
             <Button style={button} href={href}>
@@ -52,14 +50,13 @@ export const EmailTemplate = ({
             </Button>
           </Section>
           <Text style={paragraph}>
-            Best,
+            Terveisin,
             <br />
-            The DigitalHippo team
+            SSKKY
           </Text>
           <Hr style={hr} />
           <Text style={footer}>
-            If you did not request this email, you can
-            safely ignore it.
+            Jos et erikseen pyytänyt tätä sähköpostia voit jättää sen huomiotta.
           </Text>
         </Container>
       </Body>

@@ -29,23 +29,23 @@ const React = __importStar(require("react"));
 const EmailTemplate = ({ actionLabel, buttonText, href, }) => {
     return (React.createElement(components_1.Html, null,
         React.createElement(components_1.Head, null),
-        React.createElement(components_1.Preview, null, "The marketplace for high-quality digital goods."),
+        React.createElement(components_1.Preview, null, "Poistettavien tavaroiden myyntipalvelu"),
         React.createElement(components_1.Body, { style: main },
             React.createElement(components_1.Container, { style: container },
-                React.createElement(components_1.Img, { src: `${process.env.NEXT_PUBLIC_SERVER_URL}/hippo-newsletter-sign-up.png`, width: '150', height: '150', alt: 'DigitalHippo', style: logo }),
+                React.createElement(components_1.Img, { src: `${process.env.NEXT_PUBLIC_SERVER_URL}/hippo-newsletter-sign-up.png`, width: '150', height: '150', alt: 'JT', style: logo }),
                 React.createElement(components_1.Text, { style: paragraph }, "Hi there,"),
                 React.createElement(components_1.Text, { style: paragraph },
-                    "Welcome to DigitalHippo, the marketplace for high quality digital goods. Use the button below to ",
+                    "Tervetuloa, jokunimi ",
                     actionLabel,
                     "."),
                 React.createElement(components_1.Section, { style: btnContainer },
                     React.createElement(components_1.Button, { style: button, href: href }, buttonText)),
                 React.createElement(components_1.Text, { style: paragraph },
-                    "Best,",
+                    "Terveisin,",
                     React.createElement("br", null),
-                    "The DigitalHippo team"),
+                    "SSKKY"),
                 React.createElement(components_1.Hr, { style: hr }),
-                React.createElement(components_1.Text, { style: footer }, "If you did not request this email, you can safely ignore it.")))));
+                React.createElement(components_1.Text, { style: footer }, "Jos et erikseen pyyt\u00E4nyt t\u00E4t\u00E4 s\u00E4hk\u00F6postia voit j\u00E4tt\u00E4\u00E4 sen huomiotta.")))));
 };
 exports.EmailTemplate = EmailTemplate;
 const PrimaryActionEmailHtml = (props) => (0, components_1.render)(React.createElement(exports.EmailTemplate, Object.assign({}, props)), { pretty: true });

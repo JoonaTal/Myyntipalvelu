@@ -1,6 +1,9 @@
 import { formatPrice } from '../../lib/utils'
 import { Product } from '../../payload-types'
 
+
+//Muokkaa näkyviä tekstejä myöhemmin
+
 import {
   Body,
   Container,
@@ -40,29 +43,29 @@ export const ReceiptEmail = ({
   return (
     <Html>
       <Head />
-      <Preview>Your DigitalHippo Receipt</Preview>
+      <Preview>Kuittisi</Preview>
 
       <Body style={main}>
         <Container style={container}>
           <Section>
             <Column>
               <Img
-                src={`${process.env.NEXT_PUBLIC_SERVER_URL}/hippo-email-sent.png`}
+                src={`${process.env.NEXT_PUBLIC_SERVER_URL}`}
                 width='100'
                 height='100'
-                alt='DigitalHippo'
+                alt='HT'
               />
             </Column>
 
             <Column align='right' style={tableCell}>
-              <Text style={heading}>Receipt</Text>
+              <Text style={heading}>Kuitti</Text>
             </Column>
           </Section>
           <Section style={informationTable}>
             <Row style={informationTableRow}>
               <Column style={informationTableColumn}>
                 <Text style={informationTableLabel}>
-                  EMAIL
+                  SÄHKÖPOSTI
                 </Text>
                 <Link
                   style={{
@@ -74,7 +77,7 @@ export const ReceiptEmail = ({
 
               <Column style={informationTableColumn}>
                 <Text style={informationTableLabel}>
-                  INVOICE DATE
+                  LASKUN PÄIVÄMÄÄRÄ
                 </Text>
                 <Text style={informationTableValue}>
                   {format(date, 'dd MMM yyyy')}
@@ -83,7 +86,7 @@ export const ReceiptEmail = ({
 
               <Column style={informationTableColumn}>
                 <Text style={informationTableLabel}>
-                  ORDER ID
+                  TILAUSNUMERO
                 </Text>
                 <Link
                   style={{
@@ -95,7 +98,7 @@ export const ReceiptEmail = ({
             </Row>
           </Section>
           <Section style={productTitleTable}>
-            <Text style={productsTitle}>Order Summary</Text>
+            <Text style={productsTitle}>Tilauksen Yhteenveto</Text>
           </Section>
           {products.map((product) => {
             const { image } = product.images[0]
@@ -128,11 +131,11 @@ export const ReceiptEmail = ({
                         : product.description}
                     </Text>
                   ) : null}
-                  <Link
+                  {/*<Link
                     href={`${process.env.NEXT_PUBLIC_SERVER_URL}/thank-you?orderId=${orderId}`}
                     style={productLink}>
                     Download Asset
-                  </Link>
+                  </Link>*/}
                 </Column>
 
                 <Column
@@ -154,7 +157,7 @@ export const ReceiptEmail = ({
                 paddingTop: 20,
               }}>
               <Text style={productTitle}>
-                Transaction Fee
+                Maksutapahtuman kulu
               </Text>
             </Column>
 
@@ -170,7 +173,7 @@ export const ReceiptEmail = ({
           <Hr style={productPriceLine} />
           <Section align='right'>
             <Column style={tableCell} align='right'>
-              <Text style={productPriceTotal}>TOTAL</Text>
+              <Text style={productPriceTotal}>YHTEENSÄ</Text>
             </Column>
             <Column
               style={productPriceVerticalLine}></Column>
@@ -183,13 +186,13 @@ export const ReceiptEmail = ({
           <Hr style={productPriceLineBottom} />
 
           <Text style={footerLinksWrapper}>
-            <Link href='#'>Account Settings</Link> •{' '}
-            <Link href='#'>Terms of Sale</Link> •{' '}
-            <Link href='#'>Privacy Policy </Link>
+            <Link href='#'>Tilin Asetukset</Link> •{' '}
+            <Link href='#'>Myyntiehdot</Link> •{' '}
+            <Link href='#'>Tietosuojakäytäntö </Link>
           </Text>
           <Text style={footerCopyright}>
-            Copyright © 2023 DigitalHippo Inc. <br />{' '}
-            <Link href='#'>All rights reserved</Link>
+            Copyright © 2024 Joona Talkara <br />{' '}
+            <Link href='#'>Kaikki oikeudet pidetään</Link>
           </Text>
         </Container>
       </Body>

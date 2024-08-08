@@ -28,7 +28,7 @@ exports.default = (0, config_1.buildConfig)({
         bundler: (0, bundler_webpack_1.webpackBundler)(),
         meta: {
             titleSuffix: '- DigitalHippo',
-            favicon: '/favicon.icon',
+            favicon: '/favicon.ico',
             ogImage: '/thumbnail.jpg',
         },
     },

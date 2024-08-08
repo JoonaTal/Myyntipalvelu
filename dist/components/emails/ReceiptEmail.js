@@ -25,6 +25,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ReceiptEmailHtml = exports.ReceiptEmail = void 0;
 const utils_1 = require("../../lib/utils");
+//Muokkaa näkyviä tekstejä myöhemmin
 const components_1 = require("@react-email/components");
 const React = __importStar(require("react"));
 const date_fns_1 = require("date-fns");
@@ -32,27 +33,27 @@ const ReceiptEmail = ({ email, date, orderId, products, }) => {
     const total = products.reduce((acc, curr) => acc + curr.price, 0) + 1;
     return (React.createElement(components_1.Html, null,
         React.createElement(components_1.Head, null),
-        React.createElement(components_1.Preview, null, "Your DigitalHippo Receipt"),
+        React.createElement(components_1.Preview, null, "Kuittisi"),
         React.createElement(components_1.Body, { style: main },
             React.createElement(components_1.Container, { style: container },
                 React.createElement(components_1.Section, null,
                     React.createElement(components_1.Column, null,
-                        React.createElement(components_1.Img, { src: `${process.env.NEXT_PUBLIC_SERVER_URL}/hippo-email-sent.png`, width: '100', height: '100', alt: 'DigitalHippo' })),
+                        React.createElement(components_1.Img, { src: `${process.env.NEXT_PUBLIC_SERVER_URL}/hippo-email-sent.png`, width: '100', height: '100', alt: 'HT' })),
                     React.createElement(components_1.Column, { align: 'right', style: tableCell },
-                        React.createElement(components_1.Text, { style: heading }, "Receipt"))),
+                        React.createElement(components_1.Text, { style: heading }, "Kuitti"))),
                 React.createElement(components_1.Section, { style: informationTable },
                     React.createElement(components_1.Row, { style: informationTableRow },
                         React.createElement(components_1.Column, { style: informationTableColumn },
-                            React.createElement(components_1.Text, { style: informationTableLabel }, "EMAIL"),
+                            React.createElement(components_1.Text, { style: informationTableLabel }, "S\u00C4HK\u00D6POSTI"),
                             React.createElement(components_1.Link, { style: Object.assign({}, informationTableValue) }, email)),
                         React.createElement(components_1.Column, { style: informationTableColumn },
-                            React.createElement(components_1.Text, { style: informationTableLabel }, "INVOICE DATE"),
+                            React.createElement(components_1.Text, { style: informationTableLabel }, "LASKUN P\u00C4IV\u00C4M\u00C4\u00C4R\u00C4"),
                             React.createElement(components_1.Text, { style: informationTableValue }, (0, date_fns_1.format)(date, 'dd MMM yyyy'))),
                         React.createElement(components_1.Column, { style: informationTableColumn },
-                            React.createElement(components_1.Text, { style: informationTableLabel }, "ORDER ID"),
+                            React.createElement(components_1.Text, { style: informationTableLabel }, "TILAUSNUMERO"),
                             React.createElement(components_1.Link, { style: Object.assign({}, informationTableValue) }, orderId)))),
                 React.createElement(components_1.Section, { style: productTitleTable },
-                    React.createElement(components_1.Text, { style: productsTitle }, "Order Summary")),
+                    React.createElement(components_1.Text, { style: productsTitle }, "Tilauksen Yhteenveto")),
                 products.map((product) => {
                     var _a;
                     const { image } = product.images[0];
@@ -63,8 +64,7 @@ const ReceiptEmail = ({ email, date, orderId, products, }) => {
                             React.createElement(components_1.Text, { style: productTitle }, product.name),
                             product.description ? (React.createElement(components_1.Text, { style: productDescription }, product.description.length > 50
                                 ? ((_a = product.description) === null || _a === void 0 ? void 0 : _a.slice(0, 50)) + '...'
-                                : product.description)) : null,
-                            React.createElement(components_1.Link, { href: `${process.env.NEXT_PUBLIC_SERVER_URL}/thank-you?orderId=${orderId}`, style: productLink }, "Download Asset")),
+                                : product.description)) : null),
                         React.createElement(components_1.Column, { style: productPriceWrapper, align: 'right' },
                             React.createElement(components_1.Text, { style: productPrice }, (0, utils_1.formatPrice)(product.price)))));
                 }),
@@ -74,30 +74,30 @@ const ReceiptEmail = ({ email, date, orderId, products, }) => {
                             paddingLeft: '40px',
                             paddingTop: 20,
                         } },
-                        React.createElement(components_1.Text, { style: productTitle }, "Transaction Fee")),
+                        React.createElement(components_1.Text, { style: productTitle }, "Maksutapahtuman kulu")),
                     React.createElement(components_1.Column, { style: productPriceWrapper, align: 'right' },
                         React.createElement(components_1.Text, { style: productPrice }, (0, utils_1.formatPrice)(1)))),
                 React.createElement(components_1.Hr, { style: productPriceLine }),
                 React.createElement(components_1.Section, { align: 'right' },
                     React.createElement(components_1.Column, { style: tableCell, align: 'right' },
-                        React.createElement(components_1.Text, { style: productPriceTotal }, "TOTAL")),
+                        React.createElement(components_1.Text, { style: productPriceTotal }, "YHTEENS\u00C4")),
                     React.createElement(components_1.Column, { style: productPriceVerticalLine }),
                     React.createElement(components_1.Column, { style: productPriceLargeWrapper },
                         React.createElement(components_1.Text, { style: productPriceLarge }, (0, utils_1.formatPrice)(total)))),
                 React.createElement(components_1.Hr, { style: productPriceLineBottom }),
                 React.createElement(components_1.Text, { style: footerLinksWrapper },
-                    React.createElement(components_1.Link, { href: '#' }, "Account Settings"),
+                    React.createElement(components_1.Link, { href: '#' }, "Tilin Asetukset"),
                     " \u2022",
                     ' ',
-                    React.createElement(components_1.Link, { href: '#' }, "Terms of Sale"),
+                    React.createElement(components_1.Link, { href: '#' }, "Myyntiehdot"),
                     " \u2022",
                     ' ',
-                    React.createElement(components_1.Link, { href: '#' }, "Privacy Policy ")),
+                    React.createElement(components_1.Link, { href: '#' }, "Tietosuojak\u00E4yt\u00E4nt\u00F6 ")),
                 React.createElement(components_1.Text, { style: footerCopyright },
-                    "Copyright \u00A9 2023 DigitalHippo Inc. ",
+                    "Copyright \u00A9 2024 Joona Talkara ",
                     React.createElement("br", null),
                     ' ',
-                    React.createElement(components_1.Link, { href: '#' }, "All rights reserved"))))));
+                    React.createElement(components_1.Link, { href: '#' }, "Kaikki oikeudet pidet\u00E4\u00E4n"))))));
 };
 exports.ReceiptEmail = ReceiptEmail;
 const ReceiptEmailHtml = (props) => (0, components_1.render)(React.createElement(exports.ReceiptEmail, Object.assign({}, props)), {
